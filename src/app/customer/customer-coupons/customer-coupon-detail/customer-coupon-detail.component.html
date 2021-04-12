@@ -1,0 +1,41 @@
+<div class="card mb-3"
+     style="max-width: fit-content; max-height: fit-content;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img src="{{coupon.imageURL}}"
+                 alt="picture of coupon should be here"
+                 class="card-img">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h4 class="card-title">{{coupon.title}}</h4>
+                <h6 class="card-subtitle mb-2 text-muted">price: {{price}}$</h6>
+                <p class="card-text">description: {{coupon.description}}</p>
+                <p class="card-text"
+                   *ngIf="!amountZero()">amount of coupons left: {{coupon.amount}}</p>
+                <p class="card-text"
+                   *ngIf="amountZero()"
+                   style="color: red;">Sorry, we're out of: {{coupon.title}}</p>
+                <p class="card-text"><small class="text-muted">date issued: {{startDate}}</small></p>
+                <p class="card-text"><small class="text-muted">date expires: {{endDate}}</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-12">
+        <div class="btn-group"
+             role="group">
+            <button type="button"
+                    class="btn btn-primary"
+                    [disabled]="amountZero()"
+                    (click)="onPurchase()">Purchase</button>
+            <button type="button"
+                    class="btn btn-secondary"
+                    (click)="onCancle()">Cancle</button>
+
+        </div>
+    </div>
+</div>
+<hr>

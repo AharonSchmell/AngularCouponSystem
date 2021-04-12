@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-12">
+        <button class="btn btn-primary"
+                (click)="onNewCustomer()">Add Customer</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-12">
+        <app-admin-customer-item *ngFor="let c of customers; let i = index"
+                                 [customer]="c"
+                                 [id]="i"></app-admin-customer-item>
+    </div>
+</div>

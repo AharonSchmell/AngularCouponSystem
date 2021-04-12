@@ -1,0 +1,135 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()"
+          #f="ngForm">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text"
+                           id="title"
+                           [(ngModel)]="coupon.title"
+                           name="title"
+                           class="form-control"
+                           minlength="2"
+                           maxlength="30"
+                           required
+                           #n0="ngModel">
+                </div>
+                <p *ngIf="!n0.valid && n0.touched"
+                   class="text-danger">* Please enter a title between 2-30 characters</p>
+                <div class="alert alert-danger"
+                     *ngIf="uniqueError">
+                    <p class="text-danger">* {{uniqueError}}</p>
+                    <button class="btn btn-danger"
+                            (click)="onClickDismissError()">Got it!</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="startDate">Date issued</label>
+                    <input type="datetime-local"
+                           class="form-control"
+                           id="startDate"
+                           [(ngModel)]="coupon.startDate"
+                           name="startDate"
+                           required
+                           #dateInput>
+                </div>
+
+                <div class="form-group">
+                    <label for="endDate">Date expires</label>
+                    <input type="datetime-local"
+                           class="form-control"
+                           id="endDate"
+                           [(ngModel)]="coupon.endDate"
+                           name="endDate"
+                           required
+                           #dateInput>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Amount of coupons</label>
+                    <input type="text"
+                           id="amount"
+                           [(ngModel)]="coupon.amount"
+                           name="amount"
+                           class="form-control"
+                           required
+                           pattern="[0-9]+"
+                           #n1="ngModel">
+                </div>
+                <p *ngIf="!n1.valid && n1.touched"
+                   class="text-danger">* Amount must only be digits!</p>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text"
+                           id="description"
+                           [(ngModel)]="coupon.description"
+                           name="description"
+                           class="form-control"
+                           minlength="2"
+                           maxlength="30"
+                           required
+                           #n2="ngModel">
+                </div>
+                <p *ngIf="!n2.valid && n2.touched"
+                   class="text-danger">* Please enter a description between 2-30 characters</p>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <input type="text"
+                           id="category"
+                           [(ngModel)]="coupon.category"
+                           name="category"
+                           class="form-control"
+                           required
+                           pattern="[0-9]+"
+                           #n3="ngModel">
+                </div>
+                <p *ngIf="!n3.valid && n3.touched"
+                   class="text-danger">* Category must only be digits!</p>
+
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="text"
+                           id="price"
+                           [(ngModel)]="coupon.price"
+                           name="price"
+                           class="form-control"
+                           pattern="[0-9]+"
+                           required
+                           #n4="ngModel">
+                </div>
+                <p *ngIf="!n4.valid && n4.touched"
+                   class="text-danger">* Price must only be digits</p>
+
+                <div class="form-group">
+                    <label for="imageURL">Image URL</label>
+                    <input type="text"
+                           maxlength="250"
+                           id="imageURL"
+                           [(ngModel)]="coupon.imageURL"
+                           name="imageURL"
+                           class="form-control"
+                           minlength="2"
+                           required
+                           #n5="ngModel">
+                </div>
+                <p *ngIf="!n5.valid && n5.touched"
+                   class="text-danger">* Please enter an image URL between 2-250 characters</p>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-primary"
+                    type="submit"
+                    [disabled]="!f.valid">Done</button>
+            <button class="btn btn-secondary"
+                    type="button"
+                    (click)="onClearForm()">Clear</button>
+            <button class="btn btn-warning"
+                    type="button"
+                    (click)="onCancleForm()">Cancle</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,40 @@
+<div class="btn-group mr-3">
+        <button type="button"
+                class="btn btn-primary"
+                (click)="onClickAddCoupon()">Add coupon</button>
+        <div class="btn-group"
+             *ngIf="!couponListEmpty()"
+             ngbDropdown
+             role="group"
+             aria-label="Button group with nested dropdown">
+                <button class="btn btn-success"
+                        ngbDropdownToggle>Coupon list</button>
+                <div class="dropdown-menu"
+                     ngbDropdownMenu>
+                        <button class="dropdown-item"
+                                (click)="onClickCouponsMostSold()">most sold</button>
+                        <button class="dropdown-item"
+                                (click)="onClickCouponsAbc()">a-z</button>
+                        <button class="dropdown-item"
+                                (click)="onClickCouponsStartDate()">date issued</button>
+                        <button class="dropdown-item"
+                                (click)="onClickCouponsEndDate()">date expires</button>
+                        <button class="dropdown-item"
+                                (click)="onClickCouponsPriceAscending()">price low-high</button>
+                        <button class="dropdown-item"
+                                (click)="onClickCouponsPriceDescending()">price high-low</button>
+                </div>
+        </div>
+</div>
+<hr>
+<div class="row">
+        <div class="col-12">
+                <app-company-coupon-item *ngFor="let c of coupons; let i = index"
+                                         [coupon]="c"
+                                         [id]="i"></app-company-coupon-item>
+        </div>
+</div>
+<div *ngIf="couponListEmpty()">
+        <h1>Don't be shy,</h1>
+        <p>Click the add coupon button to start adding coupons!</p>
+</div>

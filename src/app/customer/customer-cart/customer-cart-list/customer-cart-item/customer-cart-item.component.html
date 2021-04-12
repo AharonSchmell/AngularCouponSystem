@@ -1,0 +1,20 @@
+<li class="list-group-item"
+    style="cursor: pointer"
+    routerLinkActive="active"
+    [routerLink]="[id]">
+    <div class="row">
+        <div class="col-4">
+            <img src="{{coupon.imageURL}}"
+                 alt="The image of the coupon"
+                 class="image-fluid"
+                 style="max-height: 50px;">
+        </div>
+        <hr>
+        <div class="col-4">
+            <h6>{{coupon.title}}</h6>
+        </div>
+        <div class="col-4">
+            <p>price: {{price}}$</p>
+        </div>
+    </div>
+</li>

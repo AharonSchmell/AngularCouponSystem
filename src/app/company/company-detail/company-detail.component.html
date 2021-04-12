@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Dear {{company.name}} employee,</h1>
+    <p>Hope you enjoy this marketing experiance.</p>
+    <p>Please feel free to create coupons and add them to your coupon list</p>
+    <p>Cheers :)</p>
+    <br>
+    <p>To change name, email or password press the edit button below</p>
+    <div class="row">
+        <div class="col-12">
+            <button type="button"
+                    class="btn btn-primary"
+                    (click)="onCompanyEdit()">Edit</button>
+        </div>
+    </div>
+    <br>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmfcz1lKMYsExXzOQs9Hygr1avQ1XnnWN4wg&usqp=CAU"
+         alt="The image of the coupon"
+         class="image-fluid"
+         style="max-height: 500px;">
+</div>

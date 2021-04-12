@@ -1,0 +1,10 @@
+<h3 *ngIf="!couponListEmpty()">Purchased items:</h3>
+<h3 *ngIf="couponListEmpty()">No purchsed items as of yet!</h3>
+<hr>
+<div class="row">
+    <div class="col-12">
+        <app-customer-cart-item *ngFor="let c of coupons; let i = index"
+                                [coupon]="c"
+                                [id]="i"></app-customer-cart-item>
+    </div>
+</div>

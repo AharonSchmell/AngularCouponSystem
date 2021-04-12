@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-12">
+        <h1>{{customer.firstName}}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h1>{{customer.lastName}}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h4>{{customer.email}}</h4>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-12">
+        <button type="button"
+                class="btn btn-danger"
+                (click)="deleteClickedToggle()">Delete</button>
+    </div>
+</div>
+<div class="row"
+     *ngIf="deleteClicked">
+    <div class="alert alert-danger">
+        <h6>Deleting a customer is permanent!</h6>
+        <h6>Are you certain you want to continue?</h6>
+        <button class="btn btn-secondary"
+                (click)="deleteClickedToggle()">Cancle</button>
+        <button class="btn btn-danger"
+                (click)="onDelete()">Delete</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-12">
+        <button type="button"
+                class="btn btn-primary"
+                (click)="onCustomerLogin()">Login</button>
+    </div>
+</div>

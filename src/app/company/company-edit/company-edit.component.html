@@ -1,0 +1,74 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()"
+          #f="ngForm">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text"
+                           id="name"
+                           [(ngModel)]="company.name"
+                           name="name"
+                           class="form-control"
+                           minlength="2"
+                           maxlength="30"
+                           required
+                           #n0="ngModel">
+                </div>
+                <div *ngIf="!n0.valid && n0.touched"
+                     class="text-danger">
+                    <p>* Please enter a name between 2-30 characters</p>
+                </div>
+                <div *ngIf="uniqueError"
+                     class="alert alert-danger">
+                    <p class="text-danger">* {{uniqueError}}</p>
+                    <button class="btn btn-danger"
+                            (click)="onClickDismissError()">Got it!</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text"
+                           id="email"
+                           [(ngModel)]="company.email"
+                           name="email"
+                           class="form-control"
+                           [email]="true"
+                           required
+                           #n1="ngModel">
+                </div>
+                <div *ngIf="!n1.valid && n1.touched"
+                     class="text-danger">
+                    <p>* Please enter a valid email</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="text"
+                           [(ngModel)]="company.password"
+                           name="password"
+                           class="form-control"
+                           pattern="[0-9]+"
+                           required
+                           #n2="ngModel">
+                </div>
+                <div *ngIf="!n2.valid && n2.touched"
+                     class="text-danger">
+                    <p>* Password must be only digits!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-primary"
+                    type="submit"
+                    [disabled]="!f.valid">Done</button>
+            <button class="btn btn-secondary"
+                    type="button"
+                    (click)="onClearForm()">Clear</button>
+            <button class="btn btn-danger"
+                    type="button"
+                    (click)="onCancleForm()">Cancle</button>
+        </div>
+    </form>
+</div>

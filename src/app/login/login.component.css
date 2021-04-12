@@ -1,0 +1,43 @@
+body{
+    background-image: url(src/images/background-coupon-login.jpg);
+    background-size:cover;
+}
+.login{
+    text-align: center;
+    background-color:salmon;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:black;
+    border-radius: 50px;
+}
+.radio-inline{
+    color:black;
+    
+}
+.login-form{
+  width:fit-content;
+  text-align: center;
+  background:#1a11117a;
+  margin-top: 57px;
+  margin-bottom: 57px;
+  margin-left: inherit;
+  padding: 50px;
+  border-radius: 50px;
+  background-color: hsla(19, 99%, 49%, 0.959);
+  box-shadow: 10px 10px 5px 0px rgba(24, 16, 133, 0.75);
+}
+.login-heading{
+  text-align: center;
+  margin-top: 20px; 
+}
+.btn{
+  width: 50%;
+  border-radius: 50px;
+  border-color: black;
+  color:black;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  background-color: salmon;
+}
+
+.alert{
+  text-align: center;
+}
