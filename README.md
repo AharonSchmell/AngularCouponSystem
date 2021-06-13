@@ -1,5 +1,5 @@
 
-This is an Angular SPA written in HTML, CSS and TypeScript, which is divided into three layers:
+This is an Angular SPA written in TypeScript, CSS and HTML using Bootstrap. The application is divided into three layers:
 The first layer is the storage service where all the requests to the backend go through.
 Next is the services which are a go between the storage service and the components.
 Finally we have the components themselves that actually show the data.
