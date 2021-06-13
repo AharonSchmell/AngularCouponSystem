@@ -1,27 +1,11 @@
-# CouponSystem
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This is an Angular SPA written in HTML, CSS and TypeScript, which is divided into three layers:
+The first layer is the storage service where all the requests to the backend go through.
+Next is the services which are a go between the storage service and the components.
+Finally we have the components themselves that actually show the data.
+In our case there are three different types of users: ADMIN, COMPANY and CUSTOMER.
+The ADMIN is like the queen on a chess board, he can to all the operations that can be doen by the COMPANY and CUSTOMER and more.
+A COMPANY can update its own fields and more importantly- create update and delete coupons.
+A CUSTOMER can also update his own fields and buy or cancle a purchase of said coupons.
+The routing is done via the app-routing.module.ts.
+ In order to write less components, the ADMIN paths are a duplicate of the COMPANY and CUSTOMER paths with the sole difference of having those paths being child components of the ADMIN.  
